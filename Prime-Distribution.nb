@@ -1,0 +1,23 @@
+bins = Partition[Range[0, 1000000, 100], 2, 1];
+
+counts = PrimePi /@ bins[[All, 2]] - PrimePi /@ bins[[All, 1]];
+
+(*Prime counts per interval*)
+
+BarChart[counts, ChartLabels -> Range[100, 1000000, 100], 
+ AxesLabel -> {"Interval (size 100)", "Number of primes"}, 
+ ChartStyle -> "Pastel", PlotRange -> All]
+
+(*Distribution of prime counts*)
+
+Histogram[counts, {1}, AxesLabel -> {"Primes per 100", "Frequency"}]
+
+(*Deviation from Prime Number Theorem estimate: ~100/ln(n) primes near n*)
+
+expected = N[100/Log[Mean[#]] & /@ bins];
+
+residuals = counts - expected;
+
+ListPlot[residuals, AxesLabel -> {"Interval", "Actual - PNT estimate"},
+  PlotLabel -> "Local deviation from Prime Number Theorem", 
+ PlotStyle -> {PointSize[0.003], Gray}]
