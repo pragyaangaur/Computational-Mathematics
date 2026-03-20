@@ -5,4 +5,4 @@ Visualizes prime counts across intervals of size 100 up to 10⁶, their frequenc
 
 **Stack:** Wolfram Mathematica
 
-<img src="Assets/Prime-Distribution-Plots.jpeg" width="250">
+<img src="Assets/Prime-Distribution-Plots.jpeg" width="800">
