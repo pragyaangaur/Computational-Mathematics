@@ -1,6 +1,6 @@
 # Computational Mathematics Projects
 
-Collection of computational experiments exploring numerical methods, probabilistic techniques, and mathematical structure through simulation and visualization. These experiments are designed to expose limitations in naive backtesting and highlight the importance of execution realism.
+Collection of computational experiments exploring numerical methods, probabilistic techniques, and mathematical structure through simulation and visualization.
 
 ## Projects
 
