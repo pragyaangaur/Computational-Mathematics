@@ -56,26 +56,3 @@ Random points are generated within a bounded square. Points that fall inside the
 
 <p align="center">
 <img src="Assets/Monte-Carlo-Pi.png" width="500"></p>
-
-## 3. Pseudo-Polyomino Enumeration
-
-**What it does:**  
-Generates and counts unique pseudo-polyomino shapes of size N by iteratively constructing connected block configurations and eliminating duplicates under rotational symmetry.
-
-**Core Idea:**  
-Combinatorial growth of connected structures with canonicalization to remove symmetry-equivalent duplicates.
-
-**How it Works:**  
-The algorithm begins with a single unit block and incrementally builds larger shapes by attaching new blocks to existing ones. At each step, all possible adjacent positions (including diagonal directions) are considered for expansion, ensuring connectivity.
-
-To avoid counting equivalent shapes multiple times, each generated configuration is transformed under rotational symmetries (0°, 90°, 180°, 270°). Each transformed version is normalized by translating it to a common origin and sorting coordinates. The lexicographically smallest representation is selected as the canonical form.
-
-Only canonical representations are retained, ensuring that symmetric duplicates are removed. This process is repeated iteratively until shapes of size N are constructed, at which point the total count is reported.
-
-**Features:**
-- Iterative generation of connected block structures  
-- Support for 8-directional adjacency (including diagonals)  
-- Symmetry reduction using rotational canonicalization  
-
-**Stack:**  
-Python
